@@ -13,7 +13,7 @@
 <body>
 <h1><%="Hello World!!!"%></h1>
 <br>
-<a herf="hello-servlet">Hello Servlet</a>
+<a>Hello Servlet</a>
 
 </body>
 </html>
