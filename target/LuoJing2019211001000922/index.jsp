@@ -12,8 +12,10 @@
 </head>
 <body>
 <h1><%="Hello World!!!"%></h1>
+<a href="life">Servlet Life Cycle</a>
 <br>
-<a>Hello Servlet</a>
+<a href="me"><h2>Week2</h2></a><br>
+<a href="Week2/register.jsp"><h2>Week3</h2></a>
 
 </body>
 </html>

@@ -49,7 +49,7 @@
 <%--    <button type="button" name="loginButton" onclick="loginVerify();">登录</button><br>--%>
 
 <%--</form>--%>
-<form class="ui form">
+<form class="ui form" action="<%=path%>/register" method="post">
 
 <%--    <div style="text-align: center;vertical-align: middle;">--%>
     <table width="400" height="29" border="0" align="center" >
@@ -68,7 +68,7 @@
         <tr>
             <td bgcolor="#00cccc"><b>Password:  </b></td>
             <td>
-                <input type="password" name="password1" size="20" class="bule" required minlength="8">
+                <input type="password" name="password" size="20" class="bule" required minlength="8">
             </td>
 <%--            <td class="font1">最少6个字符，不超过14个字符（数字，字母和下划线）--%>
 <%--            </td>--%>
@@ -88,8 +88,8 @@
         <tr>
             <td bgcolor="#00cccc"><b>Gender:  </b></td>
             <td colspan="2">
-                <input type="radio"  name="gender" value="女" checked/>Male
-                <input type="radio"  name="gender" value="男"/>Female
+                <input type="radio"  name="gender" value="Male" checked="checked"/>Male
+                <input type="radio"  name="gender" value="Female"/>Female
             </td>
         </tr>
         <br/>
@@ -98,7 +98,7 @@
         <tr>
             <td bgcolor="#00cccc"><strong>Birthdate:</strong></td>
             <td colspan="2">
-                <input type="datetime-local" name="yyyy-mm-dd" required/>
+                <input type="datetime-local" name="birthdate" required/>
             </td>
         </tr>
         <br/>
