@@ -15,6 +15,7 @@ public class SelectServlet extends HttpServlet {
     private String url;
     private String username;
     private String password;
+    ResultSet rs = null;
     Connection conn=null;
     Statement stat = null;
     public void init() throws ServletException {
@@ -27,19 +28,29 @@ public class SelectServlet extends HttpServlet {
         System.out.println(url);
         System.out.println(username);
         System.out.println(password);
+
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        // 建立数据库连接，获得连接对象conn
+        try {
+            conn = DriverManager.getConnection(url, username,password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try{
-            System.out.println(driver);
-            Class.forName(driver);
-            conn = DriverManager.getConnection(url,username,password);
+
             System.out.println("init()-->"+conn);
 
             String sql = "select * from usertable";
             stat = conn.createStatement();
-            ResultSet rs = stat.executeQuery(sql);
+            rs = stat.executeQuery(sql);
 
             PrintWriter pw = response.getWriter();
             pw.write("<table border='1' style='text-align:center;'>");
@@ -82,6 +93,7 @@ public class SelectServlet extends HttpServlet {
         try {
             conn.close();
             stat.close();
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

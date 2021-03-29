@@ -23,13 +23,25 @@ public class RegisterServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         driver = getServletContext().getInitParameter("driver");
-         url = getServletContext().getInitParameter("url");
-         username = getServletContext().getInitParameter("username");
-         password = getServletContext().getInitParameter("password");
+        url = getServletContext().getInitParameter("url");
+        username = getServletContext().getInitParameter("username");
+        password = getServletContext().getInitParameter("password");
         System.out.println(driver);
         System.out.println(url);
         System.out.println(username);
         System.out.println(password);
+
+        try {
+            Class.forName(driver);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        // 建立数据库连接，获得连接对象conn
+        try {
+            conn = DriverManager.getConnection(url, username,password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -43,12 +55,8 @@ public class RegisterServlet extends HttpServlet {
         String birthdatevalue = request.getParameter("birthdate");
         int n = 1;
         try{
-            System.out.println(driver);
-            Class.forName(driver);
-            conn = DriverManager.getConnection(url,username,password);
+
             System.out.println("init()-->"+conn);
-//            st = conn.createStatement();
-//            conn.setAutoCommit(false);
 
             String sql = "insert into usertable values (null ,?,?,?,?,?)";
 
@@ -65,16 +73,11 @@ public class RegisterServlet extends HttpServlet {
 
 //            st.executeUpdate()
 
-
-
 //            int count=stmt.executeUpdate(sql);
 //            if(count>0)
 //                System.out.println("添加成功");
 //            else
 //                System.out.println("添加失败");
-
-
-
         }
         catch (Exception e){
             e.printStackTrace();
@@ -88,8 +91,6 @@ public class RegisterServlet extends HttpServlet {
 //        writer.print("<h1>Birthdate:"+birthdatevalue+"</h1>");
 
         response.sendRedirect(request.getContextPath()+"/Select");
-
-
 
     }
 
