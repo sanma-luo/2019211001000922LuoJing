@@ -1,4 +1,4 @@
-//SelectServlet
+// SelectServlet
 package com.LuoJing.week4;
 
 import javax.servlet.ServletException;
@@ -55,6 +55,7 @@ public class SelectServlet extends HttpServlet {
 
             PrintWriter pw = response.getWriter();
             pw.write("<table border='1' style='text-align:center;'>");
+            pw.write("<td>ID</td>");
             pw.write("<td>username</td>");
             pw.write("<td>password</td>");
             pw.write("<td>email</td>");
@@ -62,6 +63,7 @@ public class SelectServlet extends HttpServlet {
             pw.write("<td>birthdate</td>");
 
             while(rs.next()){
+                int IDvalue = rs.getInt("id");
                 String usernamevalue = rs.getString("username");
                 String passwordvalue = rs.getString("password");
                 String emailvalue = rs.getString("email");
@@ -69,6 +71,7 @@ public class SelectServlet extends HttpServlet {
                 Date birthdatevalue = rs.getDate("birthday");
 
                 pw.write("<tr>");
+                pw.write("<td>"+IDvalue+"</td>");
                 pw.write("<td>"+usernamevalue+"</td>");
                 pw.write("<td>"+passwordvalue+"</td>");
                 pw.write("<td>"+emailvalue+"</td>");

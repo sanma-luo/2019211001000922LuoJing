@@ -1,5 +1,5 @@
 
-//Test JDBC
+// Test JDBC
 package com.LuoJing.week4;
 
 import javax.servlet.ServletConfig;

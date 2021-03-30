@@ -33,7 +33,7 @@
       <version>1.2</version>
     </dependency>
 
-
+<!--    连接MySQL jar包-->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>

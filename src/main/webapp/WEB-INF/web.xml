@@ -14,7 +14,7 @@
 <!--    <url-pattern>/me</url-pattern>-->
 <!--  </servlet-mapping>-->
     <servlet>
-      <servlet-name>Configs</servlet-name>
+      <servlet-name>Config</servlet-name>
       <servlet-class>com.LuoJing.week4.ConfigDemoServlet</servlet-class>
       <init-param>
         <param-name>name</param-name>
