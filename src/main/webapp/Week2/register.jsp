@@ -11,9 +11,9 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 
-<html>
-<head>
-    <title>Title</title>
+
+<%@include file="../header.jsp"%>
+    <title>Register</title>
     <link rel="stylesheet" href="semantic-ui/semantic.min.css">
     <script type="text/javascript" src="js/jquery3.3.1.js"></script>
     <script type="text/javascript" src="semantic-ui/semantic.min.js"></script>
@@ -118,8 +118,7 @@
 </form>
 
 
-</body>
-</html>
+<%@include file="../footer.jsp"%>
 
 <script>
     function loginVerify() {

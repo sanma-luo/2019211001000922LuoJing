@@ -45,11 +45,11 @@
 
 
 
-  <servlet>
-    <servlet-name>JDBC</servlet-name>
-    <servlet-class>com.LuoJing.week4.JDBCServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+<!--  <servlet>-->
+<!--    <servlet-name>JDBC</servlet-name>-->
+<!--    <servlet-class>com.LuoJing.week4.JDBCServlet</servlet-class>-->
+<!--    <load-on-startup>1</load-on-startup>-->
+<!--  </servlet>-->
 
 <!--    <init-param>-->
 <!--      <param-name>driver</param-name>-->
