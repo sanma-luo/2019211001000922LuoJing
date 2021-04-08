@@ -1,4 +1,4 @@
-<%--
+<%@ page import="java.io.PrintWriter" %><%--
   Created by IntelliJ IDEA.
   User: 13210
   Date: 2021/4/3
@@ -9,6 +9,11 @@
 <%@include file="header.jsp"%>
 <body>
 <h1>Login</h1>
+<%
+    if ((request.getAttribute("message")!=null)){
+        out.print("<h3>"+request.getAttribute("message")+"</h3>");
+    }
+%>
 <form action="<%=request.getContextPath()%>/login" method="post">
 Username:<input type="text" name="username" required/><br>
 Password:&nbsp;<input type="password" name="password" minlength="8" required/><br>

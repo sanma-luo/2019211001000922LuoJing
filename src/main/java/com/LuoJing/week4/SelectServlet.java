@@ -21,26 +21,27 @@ public class SelectServlet extends HttpServlet {
     Statement stat = null;
     public void init() throws ServletException {
         super.init();
-        driver = getServletContext().getInitParameter("driver");
-        url = getServletContext().getInitParameter("url");
-        username = getServletContext().getInitParameter("username");
-        password = getServletContext().getInitParameter("password");
-        System.out.println(driver);
-        System.out.println(url);
-        System.out.println(username);
-        System.out.println(password);
-
-        try {
-            Class.forName(driver);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        // 建立数据库连接，获得连接对象conn
-        try {
-            conn = DriverManager.getConnection(url, username,password);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        conn = (Connection) getServletContext().getAttribute("conn");
+//        driver = getServletContext().getInitParameter("driver");
+//        url = getServletContext().getInitParameter("url");
+//        username = getServletContext().getInitParameter("username");
+//        password = getServletContext().getInitParameter("password");
+//        System.out.println(driver);
+//        System.out.println(url);
+//        System.out.println(username);
+//        System.out.println(password);
+//
+//        try {
+//            Class.forName(driver);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        // 建立数据库连接，获得连接对象conn
+//        try {
+//            conn = DriverManager.getConnection(url, username,password);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
