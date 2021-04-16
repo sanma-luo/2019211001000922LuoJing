@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import com.LuoJing.Dao.*;
+import com.LuoJing.Model.*;
 
 
 
@@ -56,10 +61,24 @@ public class RegisterServlet extends HttpServlet {
         String emailvalue = request.getParameter("email");
         String gendervalue = request.getParameter("gender");
         String birthdatevalue = request.getParameter("birthdate");
-        int n = 1;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+//        Date birthdate = null;
+//        try {
+//            birthdate = dateFormat.parse(birthdatevalue);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+////        int n = 1;
+//        User user = new User(usernamevalue,passwordvalue,emailvalue,gendervalue,birthdate);
+//        UserDao userDao = new UserDao();
+//        try {
+//            userDao.saveUser(conn,user);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
         try{
 
-            System.out.println("init()-->"+conn);
+//            System.out.println("init()-->"+conn);
 
             String sql = "insert into usertable values (null ,?,?,?,?,?)";
 

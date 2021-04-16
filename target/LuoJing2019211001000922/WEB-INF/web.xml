@@ -43,6 +43,10 @@
     <param-value>225514</param-value>
   </context-param>
 
+  <welcome-file-list>
+    <welcome-file>home</welcome-file>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
 
 
 <!--  <servlet>-->

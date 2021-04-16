@@ -27,7 +27,7 @@
                             border-top-width:0px;
                             border-color:black;" align="center">
      <a style="color:white;" href="index.jsp">Home</a>
-   - <a style="color:white;" href="login.jsp">Login</a>
+   - <a style="color:white;" href="<%=request.getContextPath()%>/login.jsp">Login</a>
    - <a style="color:white;" href="productList">Product</a>
    - <a style="color:white;" href="#">FAQ</a>
    - <a style="color:white;" href="#">About</a>
