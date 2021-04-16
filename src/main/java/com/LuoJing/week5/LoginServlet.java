@@ -10,7 +10,7 @@ import java.sql.*;
 
 import com.LuoJing.Dao.UserDao;
 import com.LuoJing.Model.*;
-
+//LoginServlet
 @WebServlet(name = "LoginServlet",value = "/login")
 public class LoginServlet extends HttpServlet {
     private String driver;

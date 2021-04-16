@@ -1,7 +1,7 @@
 package com.LuoJing.Model;
 
 import java.util.Date;
-
+//User
 public class User {
     private int id;
     private String username;
