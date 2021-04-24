@@ -2,9 +2,7 @@ package com.LuoJing.week5;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.*;
 
@@ -52,10 +50,35 @@ public class LoginServlet extends HttpServlet {
         try {
             User user = userDao.findByUsernamePassword(conn,username,password);
             if (user!=null){
-                request.setAttribute("user",user);
+                String remeberMe =request.getParameter("remeberMe");
+                if (remeberMe!=null && remeberMe.equals("1")){
+                    Cookie usernameCookie = new Cookie("cUsername",user.getUsername());
+                    Cookie passwordCookie = new Cookie("cPassword",user.getPassword());
+                    Cookie remeberMeCookie = new Cookie("cRemeberMe",remeberMe);
+                    usernameCookie.setMaxAge(5);
+                    passwordCookie.setMaxAge(5);
+                    remeberMeCookie.setMaxAge(5);
+                    response.addCookie(usernameCookie);
+                    response.addCookie(passwordCookie);
+                    response.addCookie(remeberMeCookie);
+
+                }
+
+                HttpSession session = request.getSession();
+                session.setMaxInactiveInterval(10);
+                System.out.println("session id-->"+session.getId());
+
+                Cookie cookie = new Cookie("sessionid",""+user.getId());//sessionid = user id
+                cookie.setMaxAge(5*60);
+                response.addCookie(cookie);
+
+
+                session.setAttribute("user",user);
+                String encodeURL = response.encodeURL("WEB-INF/Views/userInfo.jsp");
+//                request.setAttribute("user",user);
 //                System.out.println(user+"我是user");
 //                request.getRequestDispatcher("userInfo.jsp").forward(request,response);
-                request.getRequestDispatcher("WEB-INF/Views/userInfo.jsp").forward(request,response);
+                request.getRequestDispatcher(encodeURL).forward(request,response);
             }else {
                 request.setAttribute("massage","Username or Password is Error!!");
                 request.getRequestDispatcher("WEB-INF/Views/login.jsp").forward(request,response);

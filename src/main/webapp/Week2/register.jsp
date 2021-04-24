@@ -98,7 +98,7 @@
         <tr>
             <td bgcolor="#00cccc"><strong>Birthdate:</strong></td>
             <td colspan="2">
-                <input type="datetime-local" name="birthdate" required/>
+                <input type="datetime" name="birthdate" required/>
             </td>
         </tr>
         <br/>

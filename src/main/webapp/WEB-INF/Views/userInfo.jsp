@@ -11,10 +11,15 @@
 <%@include file="header.jsp"%>
 <%--<% import com.LuoJing.Model.*;%>--%>
 <h1>User Info</h1>
+<%--<%--%>
+<%--    Cookie[] allCookies = request.getCookies();--%>
+<%--    for (Cookie cookie : allCookies) {--%>
+<%--//        out.print("<br>" + cookie.getName() + "<br>  value=" + cookie.getValue());--%>
+<%--    }--%>
+<%--%>--%>
 <%
-
 //    request.getAttribute("user");
-    User user = (User) request.getAttribute("user");
+    User user = (User) session.getAttribute("user");
 %>
 <table>
 <%--    <tr><td>Username:</td><td><%=user.getUername()%></td></tr>--%>
@@ -29,4 +34,8 @@
 <%--    <tr><td>Gender:</td><td><%=request.getAttribute("gender")%></td></tr>--%>
 <%--    <tr><td>BirthDate:</td><td><%=request.getAttribute("birthDate")%></td></tr>--%>
 </table>
+
+<form action="<%=request.getContextPath()%>/updateUser" method="get">
+    <input type="submit" value="Update">
+</form>
 <%@include file="footer.jsp"%>

@@ -3,11 +3,13 @@ package com.LuoJing.Dao;
 import com.LuoJing.Model.User;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 //UserDao
 public class UserDao implements IUserDao{
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
     public boolean saveUser(Connection con, User user) throws SQLException {
@@ -17,7 +19,7 @@ public class UserDao implements IUserDao{
         stat.setString(2,user.getPassword());
         stat.setString(3,user.getEmail());
         stat.setString(4,user.getGender());
-        stat.setDate(5, (java.sql.Date) user.getBirthday());
+        stat.setString(5, dateFormat.format(user.getBirthday()));
         int count = stat.executeUpdate();
         boolean flog = false;
         if (count>0){
@@ -45,7 +47,7 @@ public class UserDao implements IUserDao{
         stat.setString(2,user.getPassword());
         stat.setString(3,user.getEmail());
         stat.setString(4,user.getGender());
-        stat.setDate(5, (java.sql.Date) user.getBirthday());
+        stat.setString(5, dateFormat.format(user.getBirthday()));
         stat.setInt(6,user.getId());
 
 
