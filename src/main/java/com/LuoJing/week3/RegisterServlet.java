@@ -60,7 +60,7 @@ public class RegisterServlet extends HttpServlet {
         String passwordvalue = request.getParameter("password");
         String emailvalue = request.getParameter("email");
         String gendervalue = request.getParameter("gender");
-        String birthdatevalue = request.getParameter("birthdate");
+        String birthdatevalue = request.getParameter("birthDate");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 //        Date birthdate = null;
 //        try {
@@ -99,11 +99,13 @@ public class RegisterServlet extends HttpServlet {
             e.printStackTrace();
         }
 //        response.sendRedirect(request.getContextPath()+"/login.jsp");
-        response.sendRedirect("login.jsp");
+//        response.sendRedirect("WEB-INF/Views/login.jsp");
+//        request.getRequestDispatcher("WEB-INF/Views/login.jsp").forward(request,response);
+        response.sendRedirect("login");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/Views/register.jsp").forward(request,response);
     }
 
     public void destory(){

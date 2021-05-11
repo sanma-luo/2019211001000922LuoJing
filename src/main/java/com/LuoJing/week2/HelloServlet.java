@@ -11,13 +11,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.SimpleFormatter;
 
-@WebServlet(name = "HelloServlet",value = "/me")
+@WebServlet(name = "HelloServlet",value = "/hello")
 public class HelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("i am in hello filter -->HelloServlet");
+
         PrintWriter writer = response.getWriter();
         writer.print("<h1>LuoJing</h1>");
         writer.print("<h1>2019211001000922</h1>");

@@ -14,7 +14,7 @@ import java.sql.Connection;
 
 @WebServlet(
         name = "ConfigDemoServlet",
-        urlPatterns = "/config",
+//        urlPatterns = "/config",
         initParams = {
         @WebInitParam(name="Name",value = "LuoJing"),
         @WebInitParam(name="StudentId",value = "2019211001000922"),
