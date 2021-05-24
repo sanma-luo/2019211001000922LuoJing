@@ -12,7 +12,7 @@ import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet("/getImg")
+@WebServlet(value = "/getImg")
 public class GetImgServlet extends HttpServlet {
     Connection con = null;
 
