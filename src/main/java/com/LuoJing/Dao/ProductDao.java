@@ -3,10 +3,7 @@ package com.LuoJing.Dao;
 import com.LuoJing.Model.*;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -181,5 +178,18 @@ public class ProductDao implements  IProductDao{
             products.add(product);
         }
         return products;
+    }
+
+    public byte[] getPictureById (Integer productId, Connection con) throws SQLException {
+        byte[] imgByte = null;
+        String sql = "select Picture from product where ProductId = ?";
+        PreparedStatement pt  = con.prepareStatement(sql);
+        pt.setInt(1,productId);
+        ResultSet rs = pt.executeQuery();
+        while (rs.next()){
+            Blob blob = rs.getBlob("picture");
+            imgByte =blob.getBytes(1, (int) blob.length());
+        }
+        return imgByte;
     }
 }
