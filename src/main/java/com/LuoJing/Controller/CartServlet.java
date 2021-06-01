@@ -51,7 +51,7 @@ public class CartServlet extends HttpServlet {
             } else if (request.getParameter("action").equals("remove")) {
                 remove(request,response);
             }else {
-                request.getRequestDispatcher("login");
+                response.sendRedirect("login");
             }
         }
     }
