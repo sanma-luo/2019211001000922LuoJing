@@ -35,7 +35,7 @@
 		</div>
 					
 					</td></tr></c:when>
-					<c:choose>
+					<c:otherwise>
 					<!-- loop_start -->
 						<c:set var="cal" value="0.0"/>
 						<c:forEach var="c" items="${cart}">
@@ -66,7 +66,7 @@
 						<c:set var="cal" value="${cal+(c.quantity*c.product.price)}"/>
 						</c:forEach>
 					<!--loop_end-->
-						</c:choose>
+						</c:otherwise>
 					</c:choose>
 					</tbody>
 				</table>
