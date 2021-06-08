@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
-    private int CategoryID;
+    private int CategoryId;
     private String CategoryName;
     private String Description;
     private boolean Active;
@@ -16,19 +16,19 @@ public class Category {
     @Override
     public String toString() {
         return "Category{" +
-                "CategoryID=" + CategoryID +
+                "CategoryID=" + CategoryId +
                 ", CategoryName='" + CategoryName + '\'' +
                 ", Description='" + Description + '\'' +
                 ", Active=" + Active +
                 '}';
     }
 
-    public int getCategoryID() {
-        return CategoryID;
+    public int getCategoryId() {
+        return CategoryId;
     }
 
-    public void setCategoryID(int categoryID) {
-        CategoryID = categoryID;
+    public void setCategoryId(int categoryId) {
+        CategoryId = categoryId;
     }
 
     public String getCategoryName() {
@@ -58,8 +58,8 @@ public class Category {
     public Category() {
     }
 
-    public Category(int categoryID, String categoryName, String description, boolean active) {
-        CategoryID = categoryID;
+    public Category(int categoryId, String categoryName, String description, boolean active) {
+        CategoryId = categoryId;
         CategoryName = categoryName;
         Description = description;
         Active = active;
@@ -72,7 +72,7 @@ public class Category {
         ResultSet rs = pt.executeQuery();
         while (rs.next()){
             Category c = new Category();
-            c.setCategoryID(rs.getInt("CategoryID"));
+            c.setCategoryId(rs.getInt("CategoryID"));
             c.setCategoryName(rs.getString("CategoryName"));
             c.setDescription(rs.getString("Description"));
             list.add(c);
