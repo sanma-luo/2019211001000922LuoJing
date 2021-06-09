@@ -1,6 +1,6 @@
 package com.lab2;
 
-
+//lab2
 public class Login {
     private String username;
     private String password;

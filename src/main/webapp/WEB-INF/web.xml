@@ -83,6 +83,9 @@
     <filter-name>AuthFilter</filter-name>
     <url-pattern>/hello</url-pattern>
   </filter-mapping>
+
+
+<!--  lab2-->
   <filter>
     <filter-name>LuoJingFilter</filter-name>
     <filter-class>com.lab2.LuoJingFilter</filter-class>
