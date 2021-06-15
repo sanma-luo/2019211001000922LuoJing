@@ -85,6 +85,17 @@
   </filter-mapping>
 
 
+<!--  lab2-->
+  <filter>
+    <filter-name>LuoJingFilter</filter-name>
+    <filter-class>com.lab2.LuoJingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LuoJingFilter</filter-name>
+    <url-pattern>/lab2/welcome.jsp</url-pattern>
+  </filter-mapping>
+
+
 
 <!--  <servlet>-->
 <!--    <servlet-name>JDBC</servlet-name>-->
