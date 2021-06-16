@@ -1,4 +1,4 @@
-	<%@include file="WEB-INF/views/_header.jsp" %>
+	<%@include file="header.jsp" %>
 	<%@page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 	<!--寮曠敤鐧惧害鍦板浘API-->
 <style type="text/css">
@@ -173,4 +173,4 @@
     
     initMap();//鍒涘缓鍜屽垵濮嬪寲鍦板浘
 </script>
-<%@include file="WEB-INF/views/_footer.jsp" %>
+<%@include file="footer.jsp" %>

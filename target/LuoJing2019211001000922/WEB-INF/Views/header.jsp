@@ -138,6 +138,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </li> 
 								
 								<!--<li><a href="404.html">404</a></li>-->
+<%--								week15--%>
 								<li><a href="<%=basePath%>contactUs">Contact</a></li>
 							</ul>
 						</div>
